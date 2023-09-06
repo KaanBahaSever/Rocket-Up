@@ -1,0 +1,12 @@
+
+class Data:
+    x,y,z
+
+class FlightData(Data):
+    def __init__(self) -> None:
+        pass
+
+    Velocity = Data()
+
+
+    
