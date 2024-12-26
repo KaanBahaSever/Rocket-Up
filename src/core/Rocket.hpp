@@ -1,5 +1,6 @@
   #pragma once
   #include <Engine.hpp>
+  #include <components/Parachute.hpp>
   #include <string>
   #include <vector>
   #include <memory>
@@ -9,7 +10,7 @@
   class Rocket {
   public:
       Rocket();
-      Rocket(const Engine engine);
+      Rocket(const Engine engine, const Parachute parachute);
       ~Rocket();
 
       // Getters
