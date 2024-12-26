@@ -2,18 +2,18 @@
 #define ENVIRONMENT_HPP
 
 #include <string>
-#include "Planet.hpp"
+#include "planets/planets.hpp"
 
 class Environment {
 public:
-    Environment(const Planet& planet, const std::string& rail);
+    Environment(const Planets& planet, const std::string& rail);
 
-    const Planet& getPlanet() const;
+    const auto& getPlanet() const;
     const std::string& getRail() const;
 
 private:
-    Planet planet;
+    Planets planetEnumn;
     std::string rail;
 };
 
-#endif // ENVIRONMENT_HPP
+#endif

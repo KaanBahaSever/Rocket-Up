@@ -1,10 +1,11 @@
 #ifndef EARTH_HPP
 #define EARTH_HPP
 
+#include "Planet.hpp"
 #include <cmath>
 #include <array>
 
-class Earth
+class Earth : public Planet
 {
 public:
     static void setSeaLevelTemperature(double tempCelsius);
