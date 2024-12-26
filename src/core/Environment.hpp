@@ -1,19 +1,20 @@
 #ifndef ENVIRONMENT_HPP
 #define ENVIRONMENT_HPP
 
+#include "planets/Planet.hpp"
+#include "planets/Planets.hpp"
+#include <memory>
 #include <string>
-#include "planets/planets.hpp"
 
 class Environment {
-public:
-    Environment(const Planets& planet, const std::string& rail);
-
-    const auto& getPlanet() const;
-    const std::string& getRail() const;
-
 private:
-    Planets planetEnumn;
+    std::unique_ptr<Planet> planet;
     std::string rail;
+    Planets planetEnum;
+
+public:
+    Environment(const Planets& _planet, const std::string& rail);
+    const Planet& getPlanet() const { return *planet; }
 };
 
 #endif

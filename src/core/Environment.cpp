@@ -1,6 +1,7 @@
 #include "Environment.hpp"
 #include "planets/Earth.hpp"
 #include "planets/Planet.hpp"  // Add this include
+#include "planets/Planets.hpp"
 #include <memory>
 #include <cmath>
 
@@ -8,7 +9,7 @@
 std::unique_ptr<Planet> planet;
 
 Environment::Environment(const Planets &_planet, const std::string &rail)
-    : planetEnumn(_planet), rail(rail)
+    : planetEnum(_planet), rail(rail)
 {
     switch (_planet)
     {
@@ -31,9 +32,4 @@ Environment::Environment(const Planets &_planet, const std::string &rail)
     case Planets::Neptune:
         break;
     }
-}
-
-const auto &Environment::getPlanet() const
-{
-    return *planet;
 }

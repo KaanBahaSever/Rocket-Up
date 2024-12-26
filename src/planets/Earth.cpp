@@ -1,4 +1,4 @@
-#include "earth.hpp"
+#include "Earth.hpp"
 
 // Layer boundaries [m]
 static constexpr std::array<double, 7> heights = {
@@ -22,6 +22,11 @@ static constexpr double g0 = 9.80665;  // Gravitational acceleration at sea leve
 static double P0 = 101325.0; // Pressure at sea level [Pa]
 static double T0 = 288.15;             // Temperature at sea level [K]
 static constexpr double rho0 = 1.225;  // Density at sea level [kg/m³]
+
+const double EARTH_MASS = 5.972e24;  // kg
+const double EARTH_RADIUS = 6371000; // m
+const double EARTH_GRAVITY = 9.81;   // m/s^2
+const double EARTH_ATM_DENSITY = 1.225; // kg/m^3
 
 size_t Earth::findLayer(double altitude)
 {
@@ -50,14 +55,17 @@ void Earth::setSeaLevelPressure(double pressure)
     P0 = pressure;
 }
 
-double Earth::temperature(double altitude)
+double Earth::temperature(double altitude) const
 {
     size_t layer = findLayer(altitude);
     double delta_h = altitude - heights[layer];
     return baseTemperatures[layer] + lapse_rates[layer] * delta_h;
 }
+double Earth::getTemperature(double altitude) const {
+    return temperature(altitude);
+}
 
-double Earth::pressure(double altitude)
+double Earth::pressure(double altitude) const
 {
     size_t layer = findLayer(altitude);
     double delta_h = altitude - heights[layer];
@@ -69,14 +77,33 @@ double Earth::pressure(double altitude)
     return basePressures[layer] * pow(temp_ratio, -g0 / (R * lapse_rates[layer]));
 }
 
-double Earth::density(double altitude)
+double Earth::density(double altitude) const
 {
-    // Use ideal gas law: ρ = P/(RT)
-    return pressure(altitude) / (R * temperature(altitude));
+    return this->pressure(altitude) / (R * temperature(altitude));
 }
 
 double Earth::speed_of_sound(double altitude)
 {
     // Use ideal gas law: a = sqrt(γRT)
     return sqrt(1.4 * R * temperature(altitude));
+}
+
+double Earth::getMass() const {
+    return EARTH_MASS;
+}
+
+double Earth::getRadius() const {
+    return EARTH_RADIUS;
+}
+
+double Earth::getGravity() const {
+    return EARTH_GRAVITY;
+}
+
+double Earth::getAtmosphereDensity() const {
+    return EARTH_ATM_DENSITY;
+}
+
+std::string Earth::getName() const {
+    return "Earth";
 }
