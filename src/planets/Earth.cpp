@@ -1,5 +1,13 @@
 #include "Earth.hpp"
 
+Earth::Earth() {
+    // Constructor implementation
+}
+
+Earth::~Earth() {
+    // Destructor implementation
+}
+
 // Layer boundaries [m]
 static constexpr std::array<double, 7> heights = {
         0, 11000, 20000, 32000, 47000, 51000, 71000};
@@ -9,7 +17,7 @@ static constexpr std::array<double, 7> baseTemperatures = {
         288.15, 216.65, 216.65, 228.65, 270.65, 270.65, 214.65};
         
 // Temperature gradients [K/m]
-static constexpr std::array<double, 7> lapse_rates = {
+static constexpr std::array<double, 7> lapsRates = {
         -0.0065, 0.0, 0.001, 0.0028, 0.0, -0.0028, -0.002};
 
 // Base pressures [Pa]
@@ -55,37 +63,34 @@ void Earth::setSeaLevelPressure(double pressure)
     P0 = pressure;
 }
 
-double Earth::temperature(double altitude) const
+double Earth::getTemperature(double altitude) const
 {
     size_t layer = findLayer(altitude);
     double delta_h = altitude - heights[layer];
-    return baseTemperatures[layer] + lapse_rates[layer] * delta_h;
-}
-double Earth::getTemperature(double altitude) const {
-    return temperature(altitude);
+    return baseTemperatures[layer] + lapsRates[layer] * delta_h;
 }
 
-double Earth::pressure(double altitude) const
+double Earth::getPressure(double altitude) const
 {
     size_t layer = findLayer(altitude);
     double delta_h = altitude - heights[layer];
-    if (fabs(lapse_rates[layer]) < 1e-10)
+    if (fabs(lapsRates[layer]) < 1e-10)
     {
         return basePressures[layer] * exp(-g0 * delta_h / (R * baseTemperatures[layer]));
     }
-    double temp_ratio = 1 + lapse_rates[layer] * delta_h / baseTemperatures[layer];
-    return basePressures[layer] * pow(temp_ratio, -g0 / (R * lapse_rates[layer]));
+    double temp_ratio = 1 + lapsRates[layer] * delta_h / baseTemperatures[layer];
+    return basePressures[layer] * pow(temp_ratio, -g0 / (R * lapsRates[layer]));
 }
 
-double Earth::density(double altitude) const
+double Earth::getDensity(double altitude) const
 {
-    return this->pressure(altitude) / (R * temperature(altitude));
+    return this->getPressure(altitude) / (R * getTemperature(altitude));
 }
 
-double Earth::speed_of_sound(double altitude)
+double Earth::speedOfSound(double altitude)
 {
     // Use ideal gas law: a = sqrt(γRT)
-    return sqrt(1.4 * R * temperature(altitude));
+    return sqrt(1.4 * R * getTemperature(altitude));
 }
 
 double Earth::getMass() const {

@@ -14,8 +14,10 @@ public:
     virtual double getGravity() const = 0;
     virtual double getAtmosphereDensity() const = 0;
     virtual std::string getName() const = 0;
-    virtual double pressure(double altitude) const = 0;
+
+    virtual double getPressure(double altitude) const = 0;
     virtual double getTemperature(double altitude) const = 0;
+    virtual double getDensity(double altitude) const = 0;
 };
 
 #endif // PLANET_HPP

@@ -12,6 +12,8 @@ set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 # Add source files
 set(SOURCES
     src/main.cpp
+    src/core/Environment.cpp
+    src/planets/Earth.cpp
 )
 
 # Create executable
