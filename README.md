@@ -1,4 +1,3 @@
-Hello!
 # Rocket Simulation Library
 
 Welcome to the **Rocket-Up** simulation library! This project aims to model various aspects of rocket flight, from engine thrust to atmospheric conditions.
