@@ -34,5 +34,5 @@
 /build
 /.vscode
 
-.bat
-.sh
+build.bat
+build.sh
