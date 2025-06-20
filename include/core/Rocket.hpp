@@ -1,6 +1,8 @@
   #pragma once
   #include <Engine.hpp>
+  #include <math/vector/Vector3.h>
   #include <components/Parachute.hpp>
+
   #include <string>
   #include <vector>
   #include <memory>
@@ -19,13 +21,13 @@
       double getThrust() const { return thrust_; }
       double getAltitude() const { return altitude_; }
       double getVelocity() const { return velocity_; }
-      std::string getEngine() const { return engine_; }
+      Engine getEngine() const { return engine_; }
 
       // Setters
       void setName(const std::string& name) { name_ = name; }
       void setMass(double mass) { mass_ = mass; }
       void setThrust(double thrust) { thrust_ = thrust; }
-      void setEngine(const std::string& engine) { engine_ = engine; }
+      void setEngine(const Engine& engine) { engine_ = engine; }
 
       // Flight controls
       void launch();
@@ -40,7 +42,8 @@
       double altitude_;    // meters
       double velocity_;    // m/s
       bool isLaunched_;
-      std::string engine_; // engine type
+      Engine engine_; // engine type
+      Vector3 position_; // position vector
     
       // Helper functions
       void calculateForces();
