@@ -24,7 +24,7 @@ if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/libs/MathRix/CMakeLists.txt)
     add_subdirectory(libs/MathRix)
 else()
     include(FetchContent)
-    FetchContent_Declare(MathRix GIT_REPOSITORY https://github.com/KaanBahaSever/MathRix.git GIT_TAG v0.1.0)
+    FetchContent_Declare(MathRix GIT_REPOSITORY https://github.com/KaanBahaSever/MathRix.git GIT_TAG v0.2.0)
     FetchContent_MakeAvailable(MathRix)
 endif()
 
