@@ -1,0 +1,36 @@
+{
+  "atmosphere": {
+    "gas": {
+      "gamma": 1.29,
+      "molarMass": 0.04401,
+      "sutherland": {
+        "S": 222.0,
+        "T0": 273.15,
+        "mu0": 1.37e-05
+      }
+    },
+    "geopotential": false,
+    "layers": [
+      {
+        "baseAltitude": 0.0,
+        "lapseRate": -0.000998
+      },
+      {
+        "baseAltitude": 7000.0,
+        "lapseRate": -0.00222
+      }
+    ],
+    "referenceGravity": 3.727865797642516,
+    "surfacePressure": 699.0,
+    "surfaceTemperature": 242.15,
+    "topAltitude": 60000.0,
+    "type": "layered"
+  },
+  "description": "NASA Glenn Mars atmosphere (CO2), hydrostatically integrated",
+  "format": "rocketup-planet",
+  "gravitationalParameter": 42828370000000.0,
+  "name": "Mars",
+  "radius": 3389500.0,
+  "rotationRate": 7.088218e-05,
+  "version": 1
+}

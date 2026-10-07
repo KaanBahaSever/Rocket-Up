@@ -1,0 +1,41 @@
+{
+  "format": "rocketup-project",
+  "version": 1,
+  "name": "Orbit Chaser at TEKNOFEST",
+  "rocket": "../rockets/orbit_chaser.rocketup",
+  "environment": {
+    "planet": "earth",
+    "site": {
+      "name": "Aksaray / Tuz Golu",
+      "latitude": 38.4,
+      "longitude": 34.0,
+      "altitude": 970.0
+    },
+    "conditions": {
+      "temperature": 297.15,
+      "pressure": 90200.0
+    },
+    "rail": {
+      "length": 6.0,
+      "elevation": 85.0,
+      "azimuth": 0.0
+    },
+    "wind": {
+      "type": "power-law",
+      "speed": 5.0,
+      "direction": 270.0,
+      "referenceHeight": 10.0,
+      "turbulence": 0.1,
+      "seed": 7
+    }
+  },
+  "simulation": {
+    "integrator": "rk4",
+    "dynamics": "6dof",
+    "timeStep": 0.01,
+    "maxTime": 3600
+  },
+  "output": {
+    "directory": "../../output/orbit_chaser"
+  }
+}

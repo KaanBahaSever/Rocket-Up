@@ -1,0 +1,3 @@
+[submodule "libs/MathRix"]
+	path = libs/MathRix
+	url = https://github.com/KaanBahaSever/MathRix.git

@@ -1,0 +1,107 @@
+{
+  "cgFromTop": 0.4465,
+  "commonName": "M2150",
+  "delays": [
+    "0"
+  ],
+  "designation": "M2150-RL",
+  "diameter": 0.075,
+  "format": "rocketup-motor",
+  "isp": 191.22,
+  "length": 0.893,
+  "manufacturer": "Cesaroni Technology",
+  "massModel": "impulse-proportional",
+  "propellant": "Red Lightning",
+  "propellantMass": 3.969,
+  "propellantMassCurve": {
+    "mass": [
+      3.969,
+      3.9618,
+      3.93113,
+      3.85563,
+      3.72527,
+      3.45625,
+      3.01743,
+      2.48435,
+      1.74299,
+      1.0301099999999999,
+      0.349127,
+      0.0343877,
+      0.00184772,
+      0.000199314,
+      0.0
+    ],
+    "time": [
+      0.0,
+      0.027,
+      0.067,
+      0.135,
+      0.239,
+      0.451,
+      0.796,
+      1.193,
+      1.75,
+      2.33,
+      2.908,
+      3.316,
+      3.461,
+      3.49,
+      3.5
+    ]
+  },
+  "source": {
+    "url": "https://www.thrustcurve.org/simfiles/5f4294d20002e900000006b9/",
+    "contributor": "ThrustCurve.org",
+    "license": "Certification data from ThrustCurve.org (no explicit license)",
+    "importedFrom": "RockSim .rse",
+    "notes": "Pro75-6G Red Lightning. Mass curve from the RockSim file."
+  },
+  "summary": {
+    "averageThrust": 2126.5147425714285,
+    "burnTime": 3.5,
+    "class": "M",
+    "effectiveIsp": 191.2205961319816,
+    "maxThrust": 2610.79,
+    "totalImpulse": 7442.801599
+  },
+  "thrustCurve": {
+    "interpolation": "linear",
+    "thrust": [
+      0.0,
+      999.465,
+      1877.11,
+      2286.86,
+      2414.22,
+      2345.01,
+      2425.3,
+      2610.79,
+      2381.0,
+      2228.72,
+      2189.96,
+      703.225,
+      138.43,
+      74.752,
+      0.0
+    ],
+    "time": [
+      0.0,
+      0.027,
+      0.067,
+      0.135,
+      0.239,
+      0.451,
+      0.796,
+      1.193,
+      1.75,
+      2.33,
+      2.908,
+      3.316,
+      3.461,
+      3.49,
+      3.5
+    ]
+  },
+  "totalMass": 6.324,
+  "type": "reload",
+  "version": 1
+}

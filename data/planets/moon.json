@@ -1,0 +1,12 @@
+{
+  "atmosphere": {
+    "type": "vacuum"
+  },
+  "description": "Airless body",
+  "format": "rocketup-planet",
+  "gravitationalParameter": 4904869500000.0,
+  "name": "Moon",
+  "radius": 1737400.0,
+  "rotationRate": 2.6617e-06,
+  "version": 1
+}

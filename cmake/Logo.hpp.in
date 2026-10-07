@@ -1,0 +1,5 @@
+#pragma once
+// Generated from docs/logo.svg by CMake - do not edit.
+namespace rocketup::generated {
+inline const char* const kLogoSvg = R"RULOGO(@ROCKETUP_LOGO_SVG@)RULOGO";
+}

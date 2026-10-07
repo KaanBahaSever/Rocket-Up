@@ -1,0 +1,754 @@
+{
+  "aerodynamics": {
+    "cdMultiplier": 1.0,
+    "dragSource": "computed",
+    "plumeReducesBaseDrag": true
+  },
+  "description": "130 mm dual-deploy rocket with an ejectable payload, M-class motor",
+  "designer": "Kaan Baha Sever",
+  "dryMassOverride": {
+    "cg": 0.886,
+    "ixx": 0.04782146222831019,
+    "iyy": 6.463168290145685,
+    "mass": 21.229
+  },
+  "format": "rocketup-rocket",
+  "name": "Orbit Chaser",
+  "separations": [],
+  "stack": [
+    {
+      "baseRadius": 0.065,
+      "children": [
+        {
+          "category": "recovery",
+          "length": 0.025,
+          "mass": 0.1,
+          "name": "Nose eyebolt",
+          "position": {
+            "anchor": "top",
+            "offset": 0.005
+          },
+          "radius": 0.0125,
+          "type": "mass"
+        },
+        {
+          "category": "payload",
+          "children": [
+            {
+              "canopyMaterial": {
+                "density": 0.067,
+                "kind": "surface",
+                "name": "Ripstop nylon"
+              },
+              "cd": 0.8,
+              "deploy": {
+                "delay": 1.0,
+                "event": "ejection",
+                "source": "Payload",
+                "type": "event"
+              },
+              "diameter": 1.2,
+              "inflationTime": 0.3,
+              "lines": {
+                "count": 6,
+                "length": 1.0,
+                "material": {
+                  "density": 0.0018,
+                  "kind": "line",
+                  "name": "Nylon cord"
+                }
+              },
+              "name": "Payload parachute",
+              "packed": {
+                "length": 0.1,
+                "radius": 0.03
+              },
+              "position": {
+                "anchor": "top",
+                "offset": 0.0
+              },
+              "type": "parachute"
+            }
+          ],
+          "eject": {
+            "delay": 1.0,
+            "type": "apogee"
+          },
+          "ejectionSpeed": 3.0,
+          "length": 0.112,
+          "mass": 4.025,
+          "name": "Payload",
+          "position": {
+            "anchor": "top",
+            "offset": 0.2
+          },
+          "radius": 0.04,
+          "type": "payload"
+        }
+      ],
+      "finish": "regular",
+      "length": 0.12,
+      "material": {
+        "density": 1850.0,
+        "kind": "bulk",
+        "name": "Fiberglass"
+      },
+      "name": "Nose cone",
+      "shape": "power",
+      "shapeParameter": 0.5,
+      "shoulder": {
+        "length": 0.195,
+        "radius": 0.0625,
+        "thickness": 0.0025
+      },
+      "thickness": 0.006,
+      "type": "nose-cone"
+    },
+    {
+      "children": [
+        {
+          "canopyMaterial": {
+            "density": 0.067,
+            "kind": "surface",
+            "name": "Ripstop nylon"
+          },
+          "cd": 0.8,
+          "deploy": {
+            "fallback": {
+              "drop": 5.0,
+              "type": "baro-apogee"
+            },
+            "name": "baro apogee (5 m drop, mach < 0.3)",
+            "type": "custom"
+          },
+          "diameter": 0.8,
+          "inflationTime": 0.3,
+          "lines": {
+            "count": 6,
+            "length": 1.0,
+            "material": {
+              "density": 0.0018,
+              "kind": "line",
+              "name": "Nylon cord"
+            }
+          },
+          "name": "Drogue",
+          "packed": {
+            "length": 0.1,
+            "radius": 0.03
+          },
+          "position": {
+            "anchor": "top",
+            "offset": 0.0
+          },
+          "type": "parachute"
+        },
+        {
+          "length": 0.21,
+          "massOverride": 0.3927,
+          "material": {
+            "density": 1850.0,
+            "kind": "bulk",
+            "name": "Fiberglass"
+          },
+          "name": "Rail guide 1",
+          "outerRadius": 0.0625,
+          "position": {
+            "anchor": "bottom",
+            "offset": -0.1
+          },
+          "thickness": 0.0025,
+          "type": "inner-tube"
+        },
+        {
+          "category": "recovery",
+          "length": 0.08,
+          "mass": 0.755,
+          "name": "Spring ejector 1",
+          "position": {
+            "anchor": "top",
+            "offset": 0.32
+          },
+          "radius": 0.04,
+          "type": "mass"
+        },
+        {
+          "category": "recovery",
+          "length": 0.025,
+          "mass": 0.1,
+          "name": "Eyebolt body 1",
+          "position": {
+            "anchor": "top",
+            "offset": 0.38
+          },
+          "radius": 0.0125,
+          "type": "mass"
+        },
+        {
+          "category": "recovery",
+          "length": 0.025,
+          "mass": 0.1,
+          "name": "Eyebolt separation 1",
+          "position": {
+            "anchor": "top",
+            "offset": 0.31
+          },
+          "radius": 0.0125,
+          "type": "mass"
+        },
+        {
+          "children": [
+            {
+              "innerRadius": 0.0,
+              "length": 0.02,
+              "material": {
+                "density": 2700.0,
+                "kind": "bulk",
+                "name": "Aluminum"
+              },
+              "name": "Avionics top bulkhead",
+              "outerRadius": "auto",
+              "position": {
+                "anchor": "bottom",
+                "offset": -0.18
+              },
+              "role": "bulkhead",
+              "type": "ring"
+            },
+            {
+              "innerRadius": 0.0,
+              "length": 0.02,
+              "material": {
+                "density": 2700.0,
+                "kind": "bulk",
+                "name": "Aluminum"
+              },
+              "name": "Avionics bottom bulkhead",
+              "outerRadius": "auto",
+              "position": {
+                "anchor": "bottom",
+                "offset": 0.0
+              },
+              "role": "bulkhead",
+              "type": "ring"
+            },
+            {
+              "category": "avionics",
+              "length": 0.105,
+              "mass": 0.1,
+              "name": "Flight computer",
+              "position": {
+                "anchor": "top",
+                "offset": 0.045
+              },
+              "radius": 0.04,
+              "type": "mass"
+            },
+            {
+              "category": "avionics",
+              "length": 0.06,
+              "mass": 0.1,
+              "name": "Backup flight computer",
+              "position": {
+                "anchor": "top",
+                "offset": 0.07
+              },
+              "radius": 0.025,
+              "type": "mass"
+            },
+            {
+              "category": "battery",
+              "length": 0.07,
+              "mass": 0.5,
+              "name": "Batteries",
+              "position": {
+                "anchor": "top",
+                "offset": 0.065
+              },
+              "radius": 0.035,
+              "type": "mass"
+            }
+          ],
+          "length": 0.2,
+          "massOverride": 0.188,
+          "material": {
+            "density": 1850.0,
+            "kind": "bulk",
+            "name": "Fiberglass"
+          },
+          "name": "Avionics bay",
+          "outerRadius": 0.0625,
+          "position": {
+            "anchor": "bottom",
+            "offset": 0.1
+          },
+          "thickness": 0.0025,
+          "type": "inner-tube"
+        }
+      ],
+      "finish": "regular",
+      "length": 0.505,
+      "massOverride": 0.926,
+      "material": {
+        "density": 1850.0,
+        "kind": "bulk",
+        "name": "Fiberglass"
+      },
+      "name": "Body 1",
+      "radius": 0.065,
+      "thickness": 0.0025,
+      "type": "body-tube"
+    },
+    {
+      "children": [
+        {
+          "length": 0.16,
+          "massOverride": 0.2571,
+          "material": {
+            "density": 1850.0,
+            "kind": "bulk",
+            "name": "Fiberglass"
+          },
+          "name": "Rail guide 2",
+          "outerRadius": 0.0625,
+          "position": {
+            "anchor": "bottom",
+            "offset": -0.1
+          },
+          "thickness": 0.0025,
+          "type": "inner-tube"
+        },
+        {
+          "category": "recovery",
+          "length": 0.08,
+          "mass": 0.755,
+          "name": "Spring ejector 2",
+          "position": {
+            "anchor": "top",
+            "offset": 0.1
+          },
+          "radius": 0.04,
+          "type": "mass"
+        },
+        {
+          "canopyMaterial": {
+            "density": 0.067,
+            "kind": "surface",
+            "name": "Ripstop nylon"
+          },
+          "cd": 0.8,
+          "deploy": {
+            "altitude": 600.0,
+            "type": "altitude-below"
+          },
+          "diameter": 2.0,
+          "inflationTime": 0.3,
+          "lines": {
+            "count": 6,
+            "length": 2.5,
+            "material": {
+              "density": 0.0018,
+              "kind": "line",
+              "name": "Nylon cord"
+            }
+          },
+          "name": "Main",
+          "packed": {
+            "length": 0.1,
+            "radius": 0.03
+          },
+          "position": {
+            "anchor": "top",
+            "offset": 0.27
+          },
+          "type": "parachute"
+        },
+        {
+          "category": "recovery",
+          "length": 0.025,
+          "mass": 0.1,
+          "name": "Eyebolt motor section",
+          "position": {
+            "anchor": "top",
+            "offset": 0.38
+          },
+          "radius": 0.0125,
+          "type": "mass"
+        },
+        {
+          "children": [
+            {
+              "category": "ballast",
+              "length": 0.041,
+              "mass": 3.315,
+              "name": "Ballast",
+              "position": {
+                "anchor": "bottom",
+                "offset": 0.0
+              },
+              "radius": 0.06,
+              "type": "mass"
+            }
+          ],
+          "length": 0.195,
+          "material": {
+            "density": 1850.0,
+            "kind": "bulk",
+            "name": "Fiberglass"
+          },
+          "name": "Lower coupler",
+          "outerRadius": 0.0625,
+          "position": {
+            "anchor": "bottom",
+            "offset": 0.0975
+          },
+          "thickness": 0.0025,
+          "type": "inner-tube"
+        }
+      ],
+      "finish": "regular",
+      "length": 0.36,
+      "massOverride": 0.648,
+      "material": {
+        "density": 1850.0,
+        "kind": "bulk",
+        "name": "Fiberglass"
+      },
+      "name": "Body 2",
+      "radius": 0.065,
+      "thickness": 0.0025,
+      "type": "body-tube"
+    },
+    {
+      "children": [
+        {
+          "ignition": {
+            "type": "launch"
+          },
+          "length": 0.905,
+          "material": {
+            "density": 1850.0,
+            "kind": "bulk",
+            "name": "Fiberglass"
+          },
+          "motor": {
+            "cgFromTop": 0.3785,
+            "commonName": "M2020",
+            "delays": [
+              "0"
+            ],
+            "designation": "8429-M2020-IM-P",
+            "diameter": 0.075,
+            "format": "rocketup-motor",
+            "isp": 197.63,
+            "length": 0.757,
+            "manufacturer": "Cesaroni Technology",
+            "massModel": "impulse-proportional",
+            "propellant": "Imax",
+            "propellantMass": 4.349,
+            "propellantMassCurve": {
+              "mass": [
+                4.349,
+                4.336720000000001,
+                4.323300000000001,
+                4.30542,
+                4.282109999999999,
+                4.26199,
+                4.19949,
+                4.1368599999999995,
+                4.02879,
+                3.8913,
+                3.61823,
+                2.51698,
+                2.18448,
+                1.73786,
+                1.47287,
+                1.15948,
+                0.8679640000000001,
+                0.729324,
+                0.617461,
+                0.509111,
+                0.437739,
+                0.379935,
+                0.280159,
+                0.193441,
+                0.131645,
+                0.0948075,
+                0.0630035,
+                0.0254057,
+                0.00875258,
+                0.0022847699999999998,
+                0.0
+              ],
+              "time": [
+                0.0,
+                0.023,
+                0.036,
+                0.053,
+                0.073,
+                0.089,
+                0.136,
+                0.182,
+                0.262,
+                0.364,
+                0.566,
+                1.387,
+                1.639,
+                1.986,
+                2.198,
+                2.457,
+                2.708,
+                2.831,
+                2.933,
+                3.036,
+                3.109,
+                3.175,
+                3.307,
+                3.45,
+                3.589,
+                3.698,
+                3.814,
+                3.996,
+                4.115,
+                4.201,
+                4.301
+              ]
+            },
+            "source": {
+              "contributor": "ThrustCurve.org",
+              "importedFrom": "RockSim .rse",
+              "license": "Public domain (ThrustCurve.org, certification data)",
+              "notes": "Pro75-6G IMax Plugged. Mass curve from the RockSim file.",
+              "url": "https://www.thrustcurve.org/simfiles/5f4294d20002e90000000747/"
+            },
+            "summary": {
+              "averageThrust": 1959.698324226924,
+              "burnTime": 4.301,
+              "class": "M",
+              "effectiveIsp": 197.62804776549103,
+              "maxThrust": 2649.45,
+              "totalImpulse": 8428.6624925
+            },
+            "thrustCurve": {
+              "interpolation": "linear",
+              "thrust": [
+                0.0,
+                2070.11,
+                1929.89,
+                2147.6,
+                2369.0,
+                2505.53,
+                2649.45,
+                2627.31,
+                2608.86,
+                2616.24,
+                2623.62,
+                2575.65,
+                2538.74,
+                2450.18,
+                2394.83,
+                2295.2,
+                2206.64,
+                2162.36,
+                2088.56,
+                1988.93,
+                1800.74,
+                1594.1,
+                1335.79,
+                1014.76,
+                708.487,
+                601.476,
+                461.255,
+                339.483,
+                202.952,
+                88.561,
+                0.0
+              ],
+              "time": [
+                0.0,
+                0.023,
+                0.036,
+                0.053,
+                0.073,
+                0.089,
+                0.136,
+                0.182,
+                0.262,
+                0.364,
+                0.566,
+                1.387,
+                1.639,
+                1.986,
+                2.198,
+                2.457,
+                2.708,
+                2.831,
+                2.933,
+                3.036,
+                3.109,
+                3.175,
+                3.307,
+                3.45,
+                3.589,
+                3.698,
+                3.814,
+                3.996,
+                4.115,
+                4.201,
+                4.301
+              ]
+            },
+            "totalMass": 7.0318000000000005,
+            "type": "reload",
+            "version": 1
+          },
+          "name": "Motor mount",
+          "outerRadius": 0.04,
+          "position": {
+            "anchor": "bottom",
+            "offset": 0.0
+          },
+          "thickness": 0.0025,
+          "type": "motor-mount"
+        },
+        {
+          "count": 4,
+          "crossSection": "square",
+          "finish": "regular",
+          "massOverride": 0.3918,
+          "material": {
+            "density": 2700.0,
+            "kind": "bulk",
+            "name": "Aluminum"
+          },
+          "name": "Fins",
+          "outline": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.1
+            ],
+            [
+              0.06,
+              0.08
+            ],
+            [
+              0.08,
+              0.05
+            ],
+            [
+              0.1,
+              0.0
+            ]
+          ],
+          "position": {
+            "anchor": "bottom",
+            "offset": 0.0
+          },
+          "thickness": 0.0025,
+          "type": "fin-set"
+        },
+        {
+          "innerRadius": 0.04,
+          "length": 0.0495,
+          "massOverride": 1.238,
+          "material": {
+            "density": 2700.0,
+            "kind": "bulk",
+            "name": "Aluminum"
+          },
+          "name": "Motor retainer (fwd)",
+          "outerRadius": "auto",
+          "position": {
+            "anchor": "bottom",
+            "offset": -0.893
+          },
+          "role": "centering-ring",
+          "type": "ring"
+        },
+        {
+          "innerRadius": 0.04,
+          "length": 0.03,
+          "material": {
+            "density": 2700.0,
+            "kind": "bulk",
+            "name": "Aluminum"
+          },
+          "name": "Motor retainer (mid)",
+          "outerRadius": "auto",
+          "position": {
+            "anchor": "bottom",
+            "offset": -0.17
+          },
+          "role": "centering-ring",
+          "type": "ring"
+        },
+        {
+          "innerRadius": 0.0375,
+          "length": 0.0565,
+          "massOverride": 0.689,
+          "material": {
+            "density": 2700.0,
+            "kind": "bulk",
+            "name": "Aluminum"
+          },
+          "name": "Motor retainer (aft)",
+          "outerRadius": "auto",
+          "position": {
+            "anchor": "bottom",
+            "offset": 0.0265
+          },
+          "role": "engine-block",
+          "type": "ring"
+        },
+        {
+          "length": 0.02,
+          "material": {
+            "density": 2700.0,
+            "kind": "bulk",
+            "name": "Aluminum"
+          },
+          "name": "Upper rail lug",
+          "outerRadius": 0.005,
+          "position": {
+            "anchor": "middle",
+            "offset": -0.673
+          },
+          "thickness": 0.003,
+          "type": "launch-lug"
+        },
+        {
+          "length": 0.02,
+          "material": {
+            "density": 2700.0,
+            "kind": "bulk",
+            "name": "Aluminum"
+          },
+          "name": "Lower rail lug",
+          "outerRadius": 0.005,
+          "position": {
+            "anchor": "middle",
+            "offset": -0.186
+          },
+          "thickness": 0.003,
+          "type": "launch-lug"
+        }
+      ],
+      "finish": "regular",
+      "length": 1.04,
+      "material": {
+        "density": 1850.0,
+        "kind": "bulk",
+        "name": "Fiberglass"
+      },
+      "name": "Body 3",
+      "radius": 0.065,
+      "thickness": 0.0025,
+      "type": "body-tube"
+    }
+  ],
+  "version": 1
+}

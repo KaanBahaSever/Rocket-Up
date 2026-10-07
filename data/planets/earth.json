@@ -1,0 +1,56 @@
+{
+  "atmosphere": {
+    "gas": {
+      "gamma": 1.4,
+      "molarMass": 0.0289644,
+      "sutherland": {
+        "S": 110.4,
+        "T0": 273.15,
+        "mu0": 1.716e-05
+      }
+    },
+    "geopotential": true,
+    "layers": [
+      {
+        "baseAltitude": 0.0,
+        "lapseRate": -0.0065
+      },
+      {
+        "baseAltitude": 11000.0,
+        "lapseRate": 0.0
+      },
+      {
+        "baseAltitude": 20000.0,
+        "lapseRate": 0.001
+      },
+      {
+        "baseAltitude": 32000.0,
+        "lapseRate": 0.0028
+      },
+      {
+        "baseAltitude": 47000.0,
+        "lapseRate": 0.0
+      },
+      {
+        "baseAltitude": 51000.0,
+        "lapseRate": -0.0028
+      },
+      {
+        "baseAltitude": 71000.0,
+        "lapseRate": -0.002
+      }
+    ],
+    "referenceGravity": 9.80665,
+    "surfacePressure": 101325.0,
+    "surfaceTemperature": 288.15,
+    "topAltitude": 84852.0,
+    "type": "layered"
+  },
+  "description": "WGS-84 GM, IUGG mean radius, US Standard Atmosphere 1976",
+  "format": "rocketup-planet",
+  "gravitationalParameter": 398600441800000.0,
+  "name": "Earth",
+  "radius": 6371008.8,
+  "rotationRate": 7.2921159e-05,
+  "version": 1
+}

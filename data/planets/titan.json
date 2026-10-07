@@ -1,0 +1,22 @@
+{
+  "format": "rocketup-planet",
+  "version": 1,
+  "name": "Titan",
+  "description": "Saturn's largest moon: 1.47 bar nitrogen atmosphere at 94 K and 1/7 of Earth's gravity (Huygens probe profile, simplified).",
+  "gravitationalParameter": 8.978e12,
+  "radius": 2574730.0,
+  "rotationRate": 4.56e-6,
+  "atmosphere": {
+    "type": "layered",
+    "gas": { "molarMass": 0.0276, "gamma": 1.40, "sutherland": { "mu0": 1.663e-5, "T0": 273.15, "S": 107.0 } },
+    "surfaceTemperature": 93.7,
+    "surfacePressure": 146700.0,
+    "geopotential": true,
+    "layers": [
+      { "baseAltitude": 0.0, "lapseRate": -0.00053 },
+      { "baseAltitude": 44000.0, "lapseRate": 0.0 },
+      { "baseAltitude": 60000.0, "lapseRate": 0.0011 }
+    ],
+    "topAltitude": 150000.0
+  }
+}

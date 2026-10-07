@@ -1,38 +1,38 @@
-# Prerequisites
-*.d
+# Build trees
+/build*/
+/out/
+/cmake-build-*/
+CMakeUserPresets.json
+build-*.log
 
-# Compiled Object files
-*.slo
-*.lo
+# Simulation output written by the examples / CLI
+/output/
+*.rocketup.bak
+
+# Compiled files
 *.o
 *.obj
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Compiled Dynamic libraries
+*.a
+*.lib
 *.so
 *.dylib
 *.dll
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
 *.exe
 *.out
 *.app
+*.d
+*.gch
+*.pch
 
-/build
-/.vscode
+# IDEs
+/.vscode/
+/.vs/
+/.idea/
+*.user
 
-build.bat
-build.sh
+# Python
+__pycache__/
+*.pyc
+
+# Local tooling
+/.claude/

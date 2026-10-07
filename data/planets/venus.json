@@ -1,0 +1,22 @@
+{
+  "format": "rocketup-planet",
+  "version": 1,
+  "name": "Venus",
+  "description": "Approximation of the Venus International Reference Atmosphere (VIRA): 92 bar CO2 at 737 K. Solid motors stop working at this pressure - try it!",
+  "gravitationalParameter": 3.24859e14,
+  "radius": 6051800.0,
+  "rotationRate": -2.99e-7,
+  "atmosphere": {
+    "type": "layered",
+    "gas": { "molarMass": 0.04345, "gamma": 1.20, "sutherland": { "mu0": 1.37e-5, "T0": 273.15, "S": 222.0 } },
+    "surfaceTemperature": 737.0,
+    "surfacePressure": 9.2e6,
+    "geopotential": true,
+    "layers": [
+      { "baseAltitude": 0.0, "lapseRate": -0.0079 },
+      { "baseAltitude": 60000.0, "lapseRate": -0.0025 },
+      { "baseAltitude": 90000.0, "lapseRate": 0.0 }
+    ],
+    "topAltitude": 120000.0
+  }
+}
